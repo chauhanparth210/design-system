@@ -2,7 +2,7 @@ name: "Test build release"
 on:
   push:
     branches:
-      - master
+      - test-hooks
 jobs:
   visual_test:
     runs-on: ubuntu-latest
@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: notify release
-        uses: /innovaccer/design-system/actions/notify-release@master
+        uses: /innovaccer/design-system/actions/notify-release@test-hooks
         env:
           GCHAT_PATH: ${{ secrets.GCHAT_PATH }}
 
